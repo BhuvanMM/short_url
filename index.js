@@ -1,8 +1,11 @@
 const express = require("express")
 const URL = require("./models/url")
 const {handleConnection} = require("./connect/connection")
-const urlRoute = require("./routes/url")
 const path = require("path")
+
+//routes 
+const urlRoute = require("./routes/url")
+const userRoute =require("./routes/user")
 const staticRoute = require("./routes/staticRouter")
 
 //connection to MongoDB
@@ -23,6 +26,7 @@ app.use(express.urlencoded({extended:false}))
 app.use("/url",urlRoute)
 app.use("/url/analytics/:shortId",urlRoute)
 app.use("/",staticRoute)
+app.use("/user",userRoute)
 
 //ejs setup
 app.set("view engine","ejs")
