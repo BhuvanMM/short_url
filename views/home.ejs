@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+<body>
+    <h1>URL SHORTENER</h1>
+    <form method="POST" action="/url" >
+        <label>Enter original URL:</label>
+        <input type="text" name="url" placeholder="http:example.com">
+        <button type="submit">Submit</button>
+    </form>
+    <% if (locals.id) { %>
+       <p>The url is: http://localhost:3000/<%= id %></p> 
+     
+    <% } %>
+</body>
+</html>
